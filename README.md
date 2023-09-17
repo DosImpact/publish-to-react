@@ -8,31 +8,22 @@
   - [React Child Component (Props pass)](#react-child-component-props-pass)
     - [Basic](#basic)
     - [Basic2](#basic2)
+- [styling](#styling)
+  - [install styled-components, styled-breakpoints](#install-styled-components-styled-breakpoints)
+  - [reset css ( https://meyerweb.com/eric/tools/css/reset/ )](#reset-css--httpsmeyerwebcomerictoolscssreset-)
+  - [google fonts \> https://fonts.google.com/noto/specimen/Noto+Sans+KR](#google-fonts--httpsfontsgooglecomnotospecimennotosanskr)
+  - [animation](#animation)
   - [Practice](#practice)
     - [Practice1 - html+css \> React Components](#practice1---htmlcss--react-components)
     - [Practice2 -  Make Counter](#practice2----make-counter)
     - [Practice3 - Practice1 응용](#practice3---practice1-응용)
-- [styling](#styling)
-  - [install styled-components, styled-breakpoints](#install-styled-components-styled-breakpoints)
 - [develop - header](#develop---header)
   - [resource import](#resource-import)
 
 
 # goal
 
---- 1week
-- [ ] install react
-- [ ] react component basic
-  - [ ] React Structure
-  - [ ] React Child Component (Props pass)
-  - [ ] Make Counter 
-- [ ] styling
-  - [ ] install styled-components, styled-breakpoints
-  - [ ] reset css ( https://meyerweb.com/eric/tools/css/reset/ )
-  - [ ] google fonts > https://fonts.google.com/noto/specimen/Noto+Sans+KR
-  - [ ] animation 
-- [ ] develop - header (https://hungry-hawking-79d524.netlify.app/)
-- [ ] 과제 : review, 추가학습 javascript?,react?
+- [ ] 1week
 
 --- 2week
 - [ ] deployments
@@ -51,18 +42,8 @@
 
 # 1week
 
-- [ ] install react
-- [ ] react component basic
-  - [ ] React Structure
-  - [ ] React Child Component (Props pass)
-  - [ ] Make Counter 
-- [ ] styling
-  - [ ] install styled-components, styled-breakpoints
-  - [ ] reset css ( https://meyerweb.com/eric/tools/css/reset/ )
-  - [ ] google fonts > https://fonts.google.com/noto/specimen/Noto+Sans+KR
-  - [ ] animation 
-- [ ] develop - header (https://hungry-hawking-79d524.netlify.app/)
-- [ ] 과제 : review, 추가학습 javascript?,react?
+목표 
+- 리액트 설치 / 컴포넌트 이해 / 스타일링 / 카운터 / 연습 / 과제
 
 # install react
 
@@ -174,6 +155,45 @@ export default defineConfig({
 ### Basic2
 - styled, img, styled
 
+
+
+# styling
+
+## install styled-components, styled-breakpoints 
+
+```
+yarn add styled-components 
+yarn add styled-breakpoints
+```
+styled-components : 리액트 컴포넌트에 스타일을 Wrapping
+styled-breakpoints : 리액트 컴포넌트에 반응형 스타일을 설정
+
+## reset css ( https://meyerweb.com/eric/tools/css/reset/ )
+
+- index.css에 reset css 설정 후 import
+
+## google fonts > https://fonts.google.com/noto/specimen/Noto+Sans+KR
+
+- link > index.html
+- @import > index.css 
+
+## animation 
+
+```css
+  .spin {
+    animation: logo-spin infinite 10s linear;
+  }
+
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+```
+
 ## Practice 
 
 ### Practice1 - html+css > React Components
@@ -188,18 +208,6 @@ export default defineConfig({
 - 4개 카드 중 card number 가 1이면 1번 카드를 보여줍니다.
 - +,- 버튼을 만들어서 card number를 변경합니다.
 
-# styling
-
-## install styled-components, styled-breakpoints 
-
-```
-yarn add styled-components 
-yarn add styled-breakpoints
-```
-
-```
-
-```
 
 # develop - header
 
