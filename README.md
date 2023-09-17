@@ -1,6 +1,7 @@
 
 # goal
 
+--- 1week
 - [ ] install react
 - [ ] react component basic
   - [ ] React Structure
@@ -8,10 +9,24 @@
   - [ ] Make Counter 
 - [ ] styling
   - [ ] install styled-components, styled-breakpoints
-  - [ ] global styles > reset css ( https://meyerweb.com/eric/tools/css/reset/ )
+  - [ ] reset css ( https://meyerweb.com/eric/tools/css/reset/ )
   - [ ] google fonts > https://fonts.google.com/noto/specimen/Noto+Sans+KR
   - [ ] animation 
 - [ ] develop - header (https://hungry-hawking-79d524.netlify.app/)
+- [ ] 과제 : review, 추가학습 javascript?,react?
+
+--- 2week
+- [ ] deployments
+- [ ] install react-router-dom
+  - [ ] page router
+- [ ] bootstrap 연동
+  - [ ] develop component onboarding Section
+- [ ] 질의 
+- [ ] 과제 : CardComponent
+
+--- 3week
+- [ ] antd 연동
+  - [ ] antd 연동
 
 ---
 
@@ -122,4 +137,6 @@ yarn add styled-breakpoints
 
 # develop - header
 
-## resource 
+ref : (https://hungry-hawking-79d524.netlify.app/)
+
+## resource import

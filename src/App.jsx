@@ -14,6 +14,7 @@ function App() {
       {/* <Basic /> */}
       {/* <Basic2 /> */}
       <Basic3Counter />
+      <div>안녕</div>
     </>
   );
 }
