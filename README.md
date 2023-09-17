@@ -1,3 +1,22 @@
+- [goal](#goal)
+- [1week](#1week)
+- [install react](#install-react)
+  - [React 프로젝트 Port 변경](#react-프로젝트-port-변경)
+  - [절대 경로 설정](#절대-경로-설정)
+- [React component basic](#react-component-basic)
+  - [React Structure](#react-structure)
+  - [React Child Component (Props pass)](#react-child-component-props-pass)
+    - [Basic](#basic)
+    - [Basic2](#basic2)
+  - [Practice](#practice)
+    - [Practice1 - html+css \> React Components](#practice1---htmlcss--react-components)
+    - [Practice2 -  Make Counter](#practice2----make-counter)
+    - [Practice3 - Practice1 응용](#practice3---practice1-응용)
+- [styling](#styling)
+  - [install styled-components, styled-breakpoints](#install-styled-components-styled-breakpoints)
+- [develop - header](#develop---header)
+  - [resource import](#resource-import)
+
 
 # goal
 
@@ -30,15 +49,31 @@
 
 ---
 
+# 1week
+
+- [ ] install react
+- [ ] react component basic
+  - [ ] React Structure
+  - [ ] React Child Component (Props pass)
+  - [ ] Make Counter 
+- [ ] styling
+  - [ ] install styled-components, styled-breakpoints
+  - [ ] reset css ( https://meyerweb.com/eric/tools/css/reset/ )
+  - [ ] google fonts > https://fonts.google.com/noto/specimen/Noto+Sans+KR
+  - [ ] animation 
+- [ ] develop - header (https://hungry-hawking-79d524.netlify.app/)
+- [ ] 과제 : review, 추가학습 javascript?,react?
 
 # install react
 
 ```
-# nodejs 를 설치합니다.
-install nodejs
+# nodejs 를 설치합니다. (install nodejs)
+# 버전 체크
+node -v 
 
-# vscode 
+# vscode 설치
 install vscode 
+
 install extension
 - prettier
 - indent-rainbow
@@ -57,7 +92,10 @@ yarn create vite
 ✔ Select a framework: › React
 ✔ Select a variant: › JavaScript
 ```
-## Port 3000 변경
+
+## React 프로젝트 Port 변경
+
+host 및 port를 3000번으로 변경합니다.
 
 vite.config.js
 ```js
@@ -77,6 +115,10 @@ export default defineConfig({
 ```
 
 ## 절대 경로 설정
+
+상대경로 대신 절대경로로 설정합니다.
+- jsconfig.json : IDE에게 경로 설정 알려줍니다.
+- vite.config.js : 번들러에게 경로 설정 알려줍니다.
 
 jsconfig.json
 ```Js
@@ -112,15 +154,39 @@ export default defineConfig({
 });
 ```
 
-# react component basic
+# React component basic
 
-##  React Structure
+## React Structure
 
-##  React Child Component (Props pass)
+- 기본 설정 파일 설명 ( package.json, vite.config.js, jsconfig.json, index.html, .gitignore, .eslintrc.cjs ) 
+- 기본 디렉터리 구조 ( public, assets, components, pages)
+- 리액트 컴포넌트란 ? 
+- 변수, 함수, JSX 란 ?
+- 리액트 컴포넌트 합성 ( import, export, export default )
 
-## Practice - html+css > React Components
+## React Child Component (Props pass)
 
-## Practice -  Make Counter
+- 부모컴포넌트 자식컴포넌트 변수(함수) 전달
+
+### Basic
+- 기본 컴포넌트 및 합성
+
+### Basic2
+- styled, img, styled
+
+## Practice 
+
+### Practice1 - html+css > React Components
+
+아래 HTML+CSS를 리액트 컴포넌트로 옮겨봅니다.
+- https://codepen.io/abhishek747/pen/BbWKVa
+
+
+### Practice2 -  Make Counter
+
+### Practice3 - Practice1 응용
+- 4개 카드 중 card number 가 1이면 1번 카드를 보여줍니다.
+- +,- 버튼을 만들어서 card number를 변경합니다.
 
 # styling
 
