@@ -7,20 +7,20 @@
   - [React Structure](#react-structure)
   - [React Child Component (Props pass)](#react-child-component-props-pass)
     - [Basic](#basic)
-    - [Basic2](#basic2)
 - [styling](#styling)
-  - [install styled-components, styled-breakpoints](#install-styled-components-styled-breakpoints)
+  - [install styled-components, styled-breakpoints, styled-reset](#install-styled-components-styled-breakpoints-styled-reset)
   - [reset css ( https://meyerweb.com/eric/tools/css/reset/ )](#reset-css--httpsmeyerwebcomerictoolscssreset-)
   - [google fonts \> https://fonts.google.com/noto/specimen/Noto+Sans+KR](#google-fonts--httpsfontsgooglecomnotospecimennotosanskr)
-  - [animation](#animation)
   - [global css](#global-css)
   - [theme provider](#theme-provider)
+  - [animation](#animation)
+    - [Basic2](#basic2)
 - [Practice](#practice)
     - [Practice1 - html+css \> React Components](#practice1---htmlcss--react-components)
     - [Practice2 -  Make Counter](#practice2----make-counter)
     - [Practice3 - Practice1 응용](#practice3---practice1-응용)
-- [develop - header](#develop---header)
-  - [resource import](#resource-import)
+- [Develop](#develop)
+  - [components - Header](#components---header)
 
 
 # goal
@@ -51,10 +51,10 @@
 
 ```
 # nodejs 를 설치합니다. (install nodejs)
-# 버전 체크
+# 18 버전 체크
 node -v 
 
-# vscode 설치
+# IDE vscode 설치
 install vscode 
 
 install extension
@@ -154,18 +154,17 @@ export default defineConfig({
 ### Basic
 - 기본 컴포넌트 및 합성
 
-### Basic2
-- styled, img, styled
 
 
 
 # styling
 
-## install styled-components, styled-breakpoints 
+## install styled-components, styled-breakpoints, styled-reset
 
 ```
 yarn add styled-components 
 yarn add styled-breakpoints
+yarn add styled-reset
 ```
 styled-components : 리액트 컴포넌트에 스타일을 Wrapping
 styled-breakpoints : 리액트 컴포넌트에 반응형 스타일을 설정
@@ -178,6 +177,22 @@ styled-breakpoints : 리액트 컴포넌트에 반응형 스타일을 설정
 
 - link > index.html
 - @import > index.css 
+
+## global css
+- yarn add styled-reset
+- index.css 파일 내용을 옮길 수 있다.
+
+## theme provider
+- Theme 적용방법, 다크모드 적용
+
+```
+    <>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <GlobalStyles />
+      </ThemeProvider>
+    </>
+```
 
 ## animation 
 
@@ -196,22 +211,8 @@ styled-breakpoints : 리액트 컴포넌트에 반응형 스타일을 설정
   }
 ```
 
-## global css
-- yarn add styled-reset
-- index.css 파일 내용을 옮길 수 있다.
-
-## theme provider
-- Theme 적용방법, 다크모드 적용
-
-```
-    <>
-      <ThemeProvider theme={theme}>
-        <Header />
-        <GlobalStyles />
-      </ThemeProvider>
-    </>
-```
-
+### Basic2
+- styled, img, styled
 
 # Practice 
 
@@ -228,8 +229,9 @@ styled-breakpoints : 리액트 컴포넌트에 반응형 스타일을 설정
 - +,- 버튼을 만들어서 card number를 변경합니다.
 
 
-# develop - header
+# Develop
 
+## components - Header
+
+- 헤더 컴포넌트를 만들어 봅니다.
 ref : (https://hungry-hawking-79d524.netlify.app/)
-
-## resource import
