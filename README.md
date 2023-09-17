@@ -13,7 +13,9 @@
   - [reset css ( https://meyerweb.com/eric/tools/css/reset/ )](#reset-css--httpsmeyerwebcomerictoolscssreset-)
   - [google fonts \> https://fonts.google.com/noto/specimen/Noto+Sans+KR](#google-fonts--httpsfontsgooglecomnotospecimennotosanskr)
   - [animation](#animation)
-  - [Practice](#practice)
+  - [global css](#global-css)
+  - [theme provider](#theme-provider)
+- [Practice](#practice)
     - [Practice1 - html+css \> React Components](#practice1---htmlcss--react-components)
     - [Practice2 -  Make Counter](#practice2----make-counter)
     - [Practice3 - Practice1 응용](#practice3---practice1-응용)
@@ -194,7 +196,24 @@ styled-breakpoints : 리액트 컴포넌트에 반응형 스타일을 설정
   }
 ```
 
-## Practice 
+## global css
+- yarn add styled-reset
+- index.css 파일 내용을 옮길 수 있다.
+
+## theme provider
+- Theme 적용방법, 다크모드 적용
+
+```
+    <>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <GlobalStyles />
+      </ThemeProvider>
+    </>
+```
+
+
+# Practice 
 
 ### Practice1 - html+css > React Components
 
