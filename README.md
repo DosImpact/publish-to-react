@@ -6,7 +6,7 @@
 - [React component basic](#react-component-basic)
   - [React Structure](#react-structure)
   - [React Child Component (Props pass)](#react-child-component-props-pass)
-    - [Basic](#basic)
+    - [Basic1](#basic1)
 - [styling](#styling)
   - [install styled-components, styled-breakpoints, styled-reset](#install-styled-components-styled-breakpoints-styled-reset)
   - [reset css ( https://meyerweb.com/eric/tools/css/reset/ )](#reset-css--httpsmeyerwebcomerictoolscssreset-)
@@ -19,9 +19,12 @@
     - [Practice1 - html+css \> React Components](#practice1---htmlcss--react-components)
     - [Practice2 -  Make Counter](#practice2----make-counter)
     - [Practice3 - Practice1 응용](#practice3---practice1-응용)
-- [Develop](#develop)
+- [Develop1.1](#develop11)
   - [components - Header](#components---header)
-
+- [2week](#2week)
+- [배포 (deployments)](#배포-deployments)
+    - [Practice4 : 헤더까지 개발된 리액트 앱 배포하기](#practice4--헤더까지-개발된-리액트-앱-배포하기)
+ 
 
 # goal
 
@@ -151,7 +154,7 @@ export default defineConfig({
 
 - 부모컴포넌트 자식컴포넌트 변수(함수) 전달
 
-### Basic
+### Basic1
 - 기본 컴포넌트 및 합성
 
 
@@ -229,9 +232,45 @@ styled-breakpoints : 리액트 컴포넌트에 반응형 스타일을 설정
 - +,- 버튼을 만들어서 card number를 변경합니다.
 
 
-# Develop
+# Develop1.1
 
 ## components - Header
 
 - 헤더 컴포넌트를 만들어 봅니다.
 ref : (https://hungry-hawking-79d524.netlify.app/)
+
+# 2week
+
+Goal
+- [ ] 배포 (deployments)
+- [ ] install react-router-dom
+  - [ ] page router
+- [ ] bootstrap 연동
+  - [ ] develop component onboarding Section
+- [ ] 질의 
+- [ ] 과제 : CardComponent
+
+
+
+# 배포 (deployments)
+
+React App 배포는 Netlify를 이용한다.
+- github 연동으로 빠르게 배포가 가능하다.
+- github에 새로운 코드가 커밋되면 이를 자동으로 배포해주는 CI/CD기능이 탑재 되어 있다.
+- 퍼블리싱이 완료되면 Netlify를 통해서 배포 테스트를 진행하면 좋다.
+- 그리고 Production Level의 배포는 각 어플리케이션의 상황에 맞게 배포를 진행한다. 
+- https://app.netlify.com/
+
+### Practice4 : 헤더까지 개발된 리액트 앱 배포하기
+
+1. netlify 접속
+2. github 아이디로 로그인 
+3. Team overview > Sites > Add new Site > import an existing project (project read 권한 부여) 
+4. 프로젝트 선택
+5. Build settings
+   1. build command : yarn run build
+   2. publish directory : dist
+   3. add environment variables (optional)
+6. check deployment url 
+
+
