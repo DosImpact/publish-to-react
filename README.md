@@ -22,8 +22,15 @@
 - [Develop1.1](#develop11)
   - [components - Header](#components---header)
 - [2week](#2week)
+- [Page관리 - react-router-dom](#page관리---react-router-dom)
+  - [install react-router-dom](#install-react-router-dom)
+  - [react-router-dom 기본 사용법](#react-router-dom-기본-사용법)
+    - [1. page 경로설정](#1-page-경로설정)
+    - [2. header link](#2-header-link)
+    - [3. path param router](#3-path-param-router)
 - [배포 (deployments)](#배포-deployments)
     - [Practice4 : 헤더까지 개발된 리액트 앱 배포하기](#practice4--헤더까지-개발된-리액트-앱-배포하기)
+    - [이슈 체크](#이슈-체크)
  
 
 # goal
@@ -242,13 +249,152 @@ ref : (https://hungry-hawking-79d524.netlify.app/)
 # 2week
 
 Goal
-- [ ] 배포 (deployments)
-- [ ] install react-router-dom
-  - [ ] page router
 - [ ] bootstrap 연동
   - [ ] develop component onboarding Section
 - [ ] 질의 
 - [ ] 과제 : CardComponent
+
+# Page관리 - react-router-dom
+
+## install react-router-dom
+
+```
+yarn add react-router-dom
+```
+
+## react-router-dom 기본 사용법
+
+### 1. page 경로설정 
+- BrowserRouter, Route, Routes 컴포넌트 이용
+
+```js
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import StudyListPage from "./pages/StudyListPage";
+import MyStudyPage from "./pages/MyStudyPage";
+import NotFound from "./pages/NotFound";
+import StudyDetailPage from "./pages/StudyDetailPage";
+...
+  <BrowserRouter>
+    <HeaderLinked />
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/study-list" element={<StudyListPage />} />
+      <Route path="/study-list/:id" element={<StudyDetailPage />} />
+      <Route path="/my-study" element={<MyStudyPage />} />{" "}
+      <Route path="/auth" element={<AuthPage />} />
+      <Route path="/*" element={<NotFound />} />
+    </Routes>
+  </BrowserRouter>
+```
+
+
+### 2. header link
+
+```js
+import { Link } from "react-router-dom";
+
+const HeaderLinked = () => {
+  return (
+    <SHeader>
+      <Wrapper>
+        <Container>
+          <div>
+            <Link to="/">
+              <img src={logo}></img>
+            </Link>
+          </div>
+          <NavList>
+            <Link to="/study-list">
+              <div className="itemList">스터디 찾기</div>
+            </Link>
+            <Link to="/my-study">
+              <div className="itemList">내 스터디</div>
+            </Link>
+            <Link to="/auth">
+              <div className="itemList">회원가입 </div>
+            </Link>
+            <Link to="/auth">
+              <div className="itemList yellow">로그인</div>
+            </Link>
+          </NavList>
+        </Container>
+      </Wrapper>
+    </SHeader>
+  );
+};
+```
+
+### 3. path param router 
+
+- Routers는 스위치의 역할을 수행한다.
+- path가 /*인 경우 : 모든 path에 걸리지 않는 경우 보여줄 페이지
+- path에 변수가 있는 경우 : `path="/study-list/:id"` :을 이용해서 변수 표기
+
+```js
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import StudyListPage from "./pages/StudyListPage";
+import MyStudyPage from "./pages/MyStudyPage";
+import NotFound from "./pages/NotFound";
+import StudyDetailPage from "./pages/StudyDetailPage";
+...
+  <BrowserRouter>
+    <HeaderLinked />
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/study-list" element={<StudyListPage />} />
+      <Route path="/study-list/:id" element={<StudyDetailPage />} />
+      <Route path="/my-study" element={<MyStudyPage />} />{" "}
+      <Route path="/auth" element={<AuthPage />} />
+      <Route path="/*" element={<NotFound />} />
+    </Routes>
+  </BrowserRouter>
+
+```
+
+3.1 useParams으로 url변수 가져오기
+
+```js
+// src/pages/StudyDetailPage.jsx
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+
+const StudyDetailPage = () => {
+  const { id } = useParams();
+
+  return <div>StudyDetailPage id :{id} Components</div>;
+};
+
+export default StudyDetailPage;
+
+```
+
+3.3  Link을 이용해서 List > Detail 페이지 이동
+
+```js
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+const StudyListPage = () => {
+  return (
+    <div>
+      StudyListPage Components
+      <Link to="/study-list/1">
+        <div>study num 1</div>
+      </Link>
+      <Link to="/study-list/2">
+        <div>study num 2</div>
+      </Link>
+    </div>
+  );
+};
+
+export default StudyListPage;
+
+```
 
 
 
@@ -274,3 +420,15 @@ React App 배포는 Netlify를 이용한다.
 6. check deployment url 
 
 
+### 이슈 체크
+
+page not found error
+
+```js
+package.json의 scripts항목에 다음을 추가
+    "postbuild": "echo '/* /index.html 200' | cat > dist/_redirects",
+
+- npm에서 build가 끝나면 postbuild의 스크립트를 자동으로 실행시켜 준다.
+- pre접두사를 이용하면 build 시작전 실행할 스크립트를 작성할 수 있다.
+
+```
