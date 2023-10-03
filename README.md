@@ -1,4 +1,5 @@
 - [goal](#goal)
+- [읽는 방법](#읽는-방법)
 - [1week](#1week)
 - [install react](#install-react)
   - [React 프로젝트 Port 변경](#react-프로젝트-port-변경)
@@ -31,6 +32,11 @@
 - [배포 (deployments)](#배포-deployments)
     - [Practice4 : 헤더까지 개발된 리액트 앱 배포하기](#practice4--헤더까지-개발된-리액트-앱-배포하기)
     - [이슈 체크](#이슈-체크)
+- [bootstrap 연동](#bootstrap-연동)
+  - [install](#install)
+  - [Basic : Bootstrap1](#basic--bootstrap1)
+  - [Basic : Bootstrap2](#basic--bootstrap2)
+  - [Practice : Bootstrap3](#practice--bootstrap3)
  
 
 # goal
@@ -51,6 +57,13 @@
   - [ ] antd 연동
 
 ---
+
+# 읽는 방법
+
+- 개념에 대한 이론 설명을 먼저 학습합니다.
+- 예제 (Basic) : 개념에 대한 예제
+- 연습 (Practice) : 복습을 위한 기본 코드
+- 과제 (Develop) : 예제와 연습을 바탕으로 실무에 필요한 내용으로 개발합니다.
 
 # 1week
 
@@ -430,5 +443,107 @@ package.json의 scripts항목에 다음을 추가
 
 - npm에서 build가 끝나면 postbuild의 스크립트를 자동으로 실행시켜 준다.
 - pre접두사를 이용하면 build 시작전 실행할 스크립트를 작성할 수 있다.
+
+```
+
+
+# bootstrap 연동
+
+## install
+
+docs : https://react-bootstrap.netlify.app/
+
+```
+npm install react-bootstrap bootstrap
+or
+yarn add react-bootstrap bootstrap
+```
+
+css 파일을 import 합니다. 
+- 컴포넌트의 시작점인 main.jsx 폴더에 넣어주면 된다.
+
+```js
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
++ import "bootstrap/dist/css/bootstrap.min.css";
+...
+
+```
+
+## Basic : Bootstrap1
+
+Boostrap의 버튼을 가져와서 랜더링 합니다.
+- https://react-bootstrap.netlify.app/docs/components/buttons#api
+
+
+```js
+import Button from "react-bootstrap/Button";
+
+const Bootstrap1 = () => {
+  return (
+    <>
+      <Button>Primary</Button>
+      <Button variant="dark">Dark</Button>
+      <Button variant="secondary" size="lg">
+        Link
+      </Button>
+    </>
+  );
+};
+
+export default Bootstrap1;
+
+```
+
+
+## Basic : Bootstrap2
+
+Boostrap의 모달창을 가져와서 랜더링 합니다.
+- https://react-bootstrap.netlify.app/docs/components/modal#live-demo
+
+
+```js
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
+function Bootstrap2() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Launch demo modal
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}
+
+export default Bootstrap2;
+```
+
+## Practice : Bootstrap3
+
+```
 
 ```
