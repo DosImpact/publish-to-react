@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Bootstrap1 from "../components/Bootstrap1";
 import Bootstrap2 from "../components/Bootstrap2";
 import Bootstrap3 from "../components/Bootstrap3";
+import Bootstrap4 from "../components/Bootstrap4";
 
 const HomePage = () => {
   return (
@@ -9,7 +10,8 @@ const HomePage = () => {
       {/* HomePage Components */}
       {/* <Bootstrap1 /> */}
       {/* <Bootstrap2 /> */}
-      <Bootstrap3 />
+      {/* <Bootstrap3 /> */}
+      <Bootstrap4 />
     </div>
   );
 };

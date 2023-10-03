@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import styled from "styled-components";
 
-function Bootstrap3() {
+const Bootstrap3 = () => {
   return (
     <SBootstrap3>
       <Card style={{ width: "600px" }}>
@@ -24,7 +24,7 @@ function Bootstrap3() {
       </Card>
     </SBootstrap3>
   );
-}
+};
 
 export default Bootstrap3;
 

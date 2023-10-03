@@ -37,6 +37,8 @@
   - [Basic : Bootstrap1](#basic--bootstrap1)
   - [Basic : Bootstrap2](#basic--bootstrap2)
   - [Practice : Bootstrap3](#practice--bootstrap3)
+  - [develop : Boostrap4](#develop--boostrap4)
+  - [질의 및 지난 시간 과제 체크](#질의-및-지난-시간-과제-체크)
  
 
 # goal
@@ -544,6 +546,88 @@ export default Bootstrap2;
 
 ## Practice : Bootstrap3
 
-```
+```js
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import styled from "styled-components";
+
+function Bootstrap3() {
+  return (
+    <SBootstrap3>
+      <Card style={{ width: "600px" }}>
+        <Card.Img
+          style={{ objectFit: "cover", height: "320px" }}
+          variant="top"
+          src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1973&q=80"
+        />
+        <Card.Body>
+          <CardTitle>
+            스터디 모임에서 간단히 헬퍼와 토픽을 지정해보세요 지정해보세요
+            지정해보세요
+          </CardTitle>
+          <CardText>
+            스터디마스터에서는, 모임을 찾는 것은 물론 각 헬퍼를 지정하고 토픽을
+            추가할 수 있어요. 클릭 몇번으로, 시간을 절약하는 꿀팁을 공..
+          </CardText>
+        </Card.Body>
+      </Card>
+    </SBootstrap3>
+  );
+}
+
+export default Bootstrap3;
+
+const SBootstrap3 = styled.div``;
+
+const CardTitle = styled.div`
+  margin-top: 24px;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.28px;
+  font-size: 28px;
+  font-weight: 500;
+
+  /* 말줄임 */
+  white-space: nowrap; /* 줄 바꿈 금지 */
+  overflow: hidden; /* 넘치는 부분 감추기 */
+  text-overflow: ellipsis; /* 말줄임 (...) */
+  width: 100%; /* 표시할 너비 설정 */
+`;
+
+const CardText = styled.div`
+  margin-top: 14px;
+  opacity: 0.8;
+  line-height: 1.65;
+  letter-spacing: -0.23px;
+  font-size: 14px;
+`;
+
+/*
+1. img 에서 이미지 요소 사이즈에 맞춤
+    object-fit: cover;
+
+
+2.div 에서 이미지 요소 사이즈에 맞춤
+    background-image: url('경로/이미지.jpg');
+    background-size: cover;
+*/
 
 ```
+
+## develop : Boostrap4
+
+
+아래 링크에서 > 홈 > 스터디마스터 100% 활용하기 ✍🏼 부분을 만들어본다.
+- https://hungry-hawking-79d524.netlify.app/
+- 적절한 컴포넌트로 분리해서 작업 진행
+- React Child Component (Props pass) 을 이용해서 재활용 가능한 컴포넌트로 만들자.
+- css의 flex, grid로도 레이아웃을 잡을 수 있지만, bootstrap의 grid를 사용해서 레아웃을 잡자. (아래 링크 참고)
+-  https://react-bootstrap.netlify.app/docs/layout/grid
+
+
+
+## 질의 및 지난 시간 과제 체크
+
+- 카운터 예제 설명해보기 ?
+- html/css > react컴포넌트 어떻게 옮기는가 ? 
+- Header 에제
